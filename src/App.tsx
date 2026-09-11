@@ -7,13 +7,14 @@ import BlogPage from "./pages/BlogPage";
 import LoginPage from "./pages/LoginPage"; 
 import AdminPage from "./pages/AdminPage"; 
 import NotFoundPage from "./pages/NotFoundPage"; 
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, type Variants } from "motion/react";
 
 // 1. Define your transition animation variants
-const pageTransition = {
+
+const pageTransition: Variants = {
   initial: { opacity: 0, y: 10 },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } },
-  exit: { opacity: 0, y: -10, transition: { duration: 0.2, ease: "easeIn" } }
+  animate: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+  exit: { opacity: 0, y: -10, transition: { duration: 0.2 } }
 };
 
 // 2. Extract routes to a separate component to safely use the useLocation hook
